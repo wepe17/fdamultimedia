@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FDA Multimedia — Trusted Multimedia Rental Partner in Malang</title>
+<meta name="description" content="Rental Proyektor Malang · Sewa HT · Sound System · LED TV · DSLR · Layar Proyektor. Professional multimedia rental with fast response, competitive pricing, and complete event support in Malang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+<!-- ═══════ Loading screen ═══════ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="22" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="22" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="20 120" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+      <circle cx="30" cy="30" r="4" fill="#3B82F6"/>
+    </svg>
+    <div class="label">FDA Multimedia</div>
+    <div class="bar"><div class="bar-fill" id="loader-bar"></div></div>
+  </div>
+</div>
+
+<!-- ═══════ Cursor ═══════ -->
+<div class="mouse-follower" id="mouseFollower"></div>
+<div class="mouse-dot" id="mouseDot"></div>
+
+<!-- ═══════ Progress bar ═══════ -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-brand" aria-label="FDA Multimedia home">
+      <svg width="140" height="40" viewBox="0 0 220 44">
+        <defs>
+          <linearGradient id="navlg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3B82F6"/>
+            <stop offset="1" stop-color="#60A5FA"/>
+          </linearGradient>
+        </defs>
+        <circle cx="22" cy="22" r="17" fill="none" stroke="url(#navlg)" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="9" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
+        <circle cx="22" cy="22" r="3.2" fill="url(#navlg)"/>
+        <path d="M22 5 L22 12 M39 22 L32 22 M22 39 L22 32 M5 22 L12 22" stroke="url(#navlg)" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="54" y="24" font-family="SF Pro Display, Inter, sans-serif" font-size="19" font-weight="700" letter-spacing="1.5" fill="currentColor">FDA</text>
+        <text x="54" y="38" font-family="SF Pro Display, Inter, sans-serif" font-size="9" font-weight="500" letter-spacing="3.6" fill="currentColor" opacity="0.75">MULTIMEDIA</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#services" data-i18n="nav.services">Services</a></li>
+      <li><a href="#equipment" data-i18n="nav.equipment">Equipment</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+      <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang" role="group" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="id">ID</button>
+      </div>
+      <a class="btn btn-primary nav-cta" href="https://wa.me/6289764400000" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="nav.cta">Book WhatsApp</span>
+      </a>
+      <button class="nav-mobile-btn" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero" id="hero">
+  <div class="hero-media">
+    <img src="assets/hero.jpg" alt="Professional technicians setting up multimedia equipment" id="heroImg">
+    <div class="hero-grain"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-tag" data-reveal>
+        <span class="stars">★★★★★</span>
+        <span>5.0 · 276 Google Reviews</span>
+        <span class="pill" data-i18n="hero.tagpill">Premium Rental</span>
+      </div>
+      <h1 class="hero-title" data-reveal>
+        <span data-i18n="hero.title.a">Trusted Multimedia</span><br>
+        <span data-i18n="hero.title.b">Rental Partner in</span>
+        <span class="grad" data-i18n="hero.title.c">Malang.</span>
+      </h1>
+      <p class="hero-sub" data-reveal data-i18n="hero.sub">Professional rental solutions for projectors, sound systems, HT, DSLR cameras, LED TVs, screens, multimedia equipment and full event support.</p>
+      <div class="hero-actions" data-reveal>
+        <a class="btn btn-primary" href="https://wa.me/6289764400000" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          <span data-i18n="hero.cta1">Book via WhatsApp</span>
+        </a>
+        <a class="btn btn-ghost" href="#equipment">
+          <span data-i18n="hero.cta2">See Equipment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-cards" data-reveal-stagger>
+      <div class="hero-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div><div class="k">5.0 Google Rating</div><div class="v" data-i18n="hero.card1">Rated across all local searches</div></div>
+      </div>
+      <div class="hero-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><div class="k">276+ Reviews</div><div class="v" data-i18n="hero.card2">Verified customer feedback</div></div>
+      </div>
+      <div class="hero-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><div class="k" data-i18n="hero.card3.k">Fast Response</div><div class="v" data-i18n="hero.card3.v">Reply within minutes on WhatsApp</div></div>
+      </div>
+      <div class="hero-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="k" data-i18n="hero.card4.k">Trusted Partner</div><div class="v" data-i18n="hero.card4.v">Schools · Corporations · Government</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <span data-i18n="hero.scroll">Scroll to explore</span>
+    <div class="track"></div>
+  </div>
+</header>
+
+<!-- ═══════ TRUST BAR ═══════ -->
+<section class="trustbar" style="padding-top: 28px; padding-bottom: 28px;">
+  <div class="container trustbar-inner" data-reveal-stagger>
+    <div class="trust-item">
+      <div class="glyph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <div><div class="lb">5.0 <span style="color:#FBBF24">★★★★★</span></div><div class="sb" data-i18n="trust.g">Google Rating</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div><div class="lb"><span class="counter" data-target="276">0</span>+</div><div class="sb" data-i18n="trust.rev">Reviews</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div><div class="lb"><span class="counter" data-target="1000">0</span>+</div><div class="sb" data-i18n="trust.evt">Successful Events</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="lb" data-i18n="trust.eq.k">Professional</div><div class="sb" data-i18n="trust.eq.v">Equipment</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div><div class="lb" data-i18n="trust.fr.k">Fast Response</div><div class="sb" data-i18n="trust.fr.v">Reply in minutes</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div><div class="lb" data-i18n="trust.op.k">Open Everyday</div><div class="sb" data-i18n="trust.op.v">Mon – Sun · 08:00 – 22:00</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-media" data-reveal>
+      <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="background:linear-gradient(160deg,#13293D,#0A1420);">
+        <defs>
+          <linearGradient id="glow1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B82F6" stop-opacity=".4"/><stop offset="1" stop-color="#3B82F6" stop-opacity="0"/></linearGradient>
+          <linearGradient id="lens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22344F"/><stop offset="1" stop-color="#0A1420"/></linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#glow1)"/>
+        <!-- shelves -->
+        <rect x="40" y="80" width="320" height="8" fill="#22344F"/>
+        <rect x="40" y="220" width="320" height="8" fill="#22344F"/>
+        <rect x="40" y="360" width="320" height="8" fill="#22344F"/>
+        <!-- projector -->
+        <rect x="70" y="30" width="120" height="50" rx="6" fill="url(#lens)" stroke="#3B82F6" stroke-opacity=".3"/>
+        <circle cx="170" cy="55" r="14" fill="#0A1420" stroke="#60A5FA" stroke-width="1.5"/>
+        <circle cx="170" cy="55" r="6" fill="#3B82F6" opacity=".8"/>
+        <rect x="80" y="42" width="6" height="6" fill="#22C55E"/>
+        <!-- speaker -->
+        <rect x="220" y="20" width="100" height="60" rx="4" fill="url(#lens)" stroke="#3B82F6" stroke-opacity=".3"/>
+        <circle cx="250" cy="50" r="14" fill="#0A1420" stroke="#22344F"/>
+        <circle cx="290" cy="50" r="8" fill="#0A1420" stroke="#22344F"/>
+        <!-- mixer -->
+        <rect x="60" y="170" width="140" height="50" rx="4" fill="url(#lens)" stroke="#3B82F6" stroke-opacity=".3"/>
+        <g fill="#3B82F6" opacity=".7"><circle cx="80" cy="195" r="3"/><circle cx="100" cy="195" r="3"/><circle cx="120" cy="195" r="3"/><circle cx="140" cy="195" r="3"/><circle cx="160" cy="195" r="3"/><circle cx="180" cy="195" r="3"/></g>
+        <!-- HT -->
+        <g transform="translate(220,140)">
+          <rect x="0" y="0" width="30" height="80" rx="4" fill="#22344F" stroke="#3B82F6" stroke-opacity=".3"/>
+          <rect x="6" y="8" width="18" height="20" rx="2" fill="#0A1420"/>
+          <circle cx="15" cy="45" r="3" fill="#3B82F6"/>
+          <rect x="6" y="55" width="18" height="18" rx="2" fill="#0A1420"/>
+        </g>
+        <g transform="translate(260,140)">
+          <rect x="0" y="0" width="30" height="80" rx="4" fill="#22344F" stroke="#3B82F6" stroke-opacity=".3"/>
+          <rect x="6" y="8" width="18" height="20" rx="2" fill="#0A1420"/>
+          <circle cx="15" cy="45" r="3" fill="#60A5FA"/>
+          <rect x="6" y="55" width="18" height="18" rx="2" fill="#0A1420"/>
+        </g>
+        <g transform="translate(300,140)">
+          <rect x="0" y="0" width="30" height="80" rx="4" fill="#22344F" stroke="#3B82F6" stroke-opacity=".3"/>
+          <rect x="6" y="8" width="18" height="20" rx="2" fill="#0A1420"/>
+          <circle cx="15" cy="45" r="3" fill="#3B82F6"/>
+          <rect x="6" y="55" width="18" height="18" rx="2" fill="#0A1420"/>
+        </g>
+        <!-- LED TV -->
+        <rect x="80" y="280" width="240" height="140" rx="6" fill="#0A1420" stroke="#3B82F6" stroke-opacity=".4"/>
+        <rect x="90" y="290" width="220" height="115" fill="url(#glow1)"/>
+        <text x="200" y="360" text-anchor="middle" fill="#60A5FA" font-family="SF Pro Display, Inter, sans-serif" font-size="24" font-weight="600" opacity=".7">FDA</text>
+        <text x="200" y="380" text-anchor="middle" fill="#60A5FA" font-family="SF Pro Display, Inter, sans-serif" font-size="10" letter-spacing="3" opacity=".5">MULTIMEDIA</text>
+        <!-- floor light -->
+        <ellipse cx="200" cy="470" rx="200" ry="30" fill="url(#glow1)" opacity=".5"/>
+      </svg>
+      <div class="badge">
+        <div><div class="n" data-i18n="about.badge.n">10+</div><div class="t" data-i18n="about.badge.t">Years serving Malang</div></div>
+      </div>
+    </div>
+    <div class="about-copy" data-reveal>
+      <span class="eyebrow" data-i18n="about.eyebrow">About FDA</span>
+      <h2 class="section-title" data-i18n="about.title">Malang's most trusted multimedia rental company.</h2>
+      <p class="section-lede" data-i18n="about.p">FDA Multimedia has become one of Malang's most trusted multimedia rental providers — delivering high-quality equipment, fast-response service, competitive pricing, and professional event support across schools, corporations, weddings, and government events.</p>
+
+      <div class="about-stats">
+        <div class="about-stat"><div class="n"><span class="counter" data-target="10">0</span><span class="accent">+</span></div><div class="t" data-i18n="about.s1">Years of experience</div></div>
+        <div class="about-stat"><div class="n"><span class="counter" data-target="1000">0</span><span class="accent">+</span></div><div class="t" data-i18n="about.s2">Successful events</div></div>
+        <div class="about-stat"><div class="n"><span class="counter" data-target="276">0</span><span class="accent">+</span></div><div class="t" data-i18n="about.s3">Verified reviews</div></div>
+        <div class="about-stat"><div class="n">5.0<span class="accent"> ★</span></div><div class="t" data-i18n="about.s4">Google rating</div></div>
+      </div>
+
+      <div class="about-chips">
+        <span class="chip">Projectors</span>
+        <span class="chip">Sound Systems</span>
+        <span class="chip">HT / Walkie Talkie</span>
+        <span class="chip">DSLR Cameras</span>
+        <span class="chip">LED TVs</span>
+        <span class="chip">Conference Kits</span>
+        <span class="chip">Mixers</span>
+        <span class="chip">Wireless Mics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SERVICES ═══════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="svc.eyebrow">Our Services</span>
+        <h2 class="section-title" data-i18n="svc.title">Complete multimedia rental, one professional partner.</h2>
+      </div>
+      <p class="section-lede" data-reveal data-i18n="svc.p">From single-projector classroom setups to full-scale conference production — every category is professionally maintained, tested before delivery, and backed by our on-site technicians.</p>
+    </div>
+
+    <div class="services-grid" data-reveal-stagger>
+      <!-- Card template repeated -->
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 10h1M17 10h1"/></svg></div><div class="svc-title" data-i18n="svc.1.t">Projector Rental</div><div class="svc-desc" data-i18n="svc.1.d">Epson, BenQ, Sony — 3000 to 8000 lumens for any venue size.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v4H4zM4 14h16v4H4z"/><circle cx="7" cy="8" r="1" fill="currentColor"/><circle cx="7" cy="16" r="1" fill="currentColor"/></svg></div><div class="svc-title" data-i18n="svc.2.t">HDMI Converter</div><div class="svc-desc" data-i18n="svc.2.d">VGA · HDMI · Display Port · USB-C — every laptop connects cleanly.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="9" r="3"/><circle cx="12" cy="16" r="2"/></svg></div><div class="svc-title" data-i18n="svc.3.t">Sound System</div><div class="svc-desc" data-i18n="svc.3.d">Portable to line-array systems for rooms of 30 to 3,000 people.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="2" width="6" height="14" rx="3"/><path d="M5 10a7 7 0 0014 0M12 19v3"/></svg></div><div class="svc-title" data-i18n="svc.4.t">Wireless Microphone</div><div class="svc-desc" data-i18n="svc.4.d">Handheld & lavalier UHF sets — clean audio, zero dropouts.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10v4M10 9v6M14 10v4M18 9v6"/></svg></div><div class="svc-title" data-i18n="svc.5.t">Audio Mixer</div><div class="svc-desc" data-i18n="svc.5.d">Yamaha & Behringer digital mixers, 6 to 32 channels.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 20h8M12 17v3"/></svg></div><div class="svc-title" data-i18n="svc.6.t">LED TV Rental</div><div class="svc-desc" data-i18n="svc.6.d">43" · 55" · 65" · 75" — 4K displays with roll-in stands.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="14" rx="1"/><path d="M3 17l3 4h12l3-4M8 8h8M8 12h8"/></svg></div><div class="svc-title" data-i18n="svc.7.t">Projection Screen</div><div class="svc-desc" data-i18n="svc.7.d">70" tripod to 200" motorised — front & rear projection ready.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 6h4M11 10h2M12 18v.5"/></svg></div><div class="svc-title" data-i18n="svc.8.t">Walkie Talkie (HT)</div><div class="svc-desc" data-i18n="svc.8.d">Baofeng, Motorola & Icom sets for event crew coordination.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><div class="svc-title" data-i18n="svc.9.t">DSLR Camera</div><div class="svc-desc" data-i18n="svc.9.d">Canon & Nikon bodies with kit + prime lens options.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3v12a3 3 0 106 0V3"/><path d="M14 22l-2-2-2 2"/></svg></div><div class="svc-title" data-i18n="svc.10.t">Laser Pointer</div><div class="svc-desc" data-i18n="svc.10.d">Logitech Spotlight & wireless presenters with USB receiver.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div><div class="svc-title" data-i18n="svc.11.t">Technical Operator</div><div class="svc-desc" data-i18n="svc.11.d">Certified crew on-site — setup, run, tear-down handled.</div><span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+
+      <div class="svc-card" style="background:linear-gradient(135deg, var(--navy-900), var(--navy-800)); color:white; border-color:transparent;">
+        <div class="svc-icon" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.1); color:var(--accent-hi);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="svc-title" style="color:white;" data-i18n="svc.12.t">Full Event Multimedia Support</div>
+        <div class="svc-desc" style="color:rgba(255,255,255,.7);" data-i18n="svc.12.d">Turnkey: consultation → equipment → setup → operation → tear-down.</div>
+        <span class="svc-more" style="color:var(--accent-hi);">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FEATURED EQUIPMENT ═══════ -->
+<section class="equip" id="equipment">
+  <div class="container">
+    <div class="services-head" style="margin-bottom: 0;">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="eq.eyebrow">Featured Equipment</span>
+        <h2 class="section-title" data-i18n="eq.title">Professional-grade. Rigorously maintained.</h2>
+      </div>
+      <p class="section-lede" data-reveal style="color:rgba(255,255,255,.7);" data-i18n="eq.p">Explore our featured inventory across six categories — every unit tested before dispatch, delivered with cables, and covered by our on-call support line.</p>
+    </div>
+
+    <div class="equip-tabs" data-reveal>
+      <button class="equip-tab active" data-eq="projector" data-i18n="eq.t1">Projectors</button>
+      <button class="equip-tab" data-eq="sound" data-i18n="eq.t2">Sound</button>
+      <button class="equip-tab" data-eq="mixer" data-i18n="eq.t3">Mixer</button>
+      <button class="equip-tab" data-eq="ht" data-i18n="eq.t4">HT</button>
+      <button class="equip-tab" data-eq="tv" data-i18n="eq.t5">TV Display</button>
+      <button class="equip-tab" data-eq="converter" data-i18n="eq.t6">Converter</button>
+    </div>
+
+    <div class="equip-hero">
+      <div class="equip-visual" data-reveal>
+        <span class="badge"><span class="dot"></span> <span data-i18n="eq.avail">In Stock · Ready to Deliver</span></span>
+        <!-- product SVG - rendered dynamically -->
+        <div id="equipVisual" style="width:100%;height:100%;display:grid;place-items:center;position:relative;z-index:1;"></div>
+      </div>
+      <div class="equip-body" data-reveal>
+        <h3 id="eqTitle">Epson EB-FH52 · 4000 Lumen Full HD Projector</h3>
+        <p class="desc" id="eqDesc">A conference-grade full HD projector delivering razor-sharp 4000-lumen output. Ideal for auditoriums, wedding halls, and corporate events up to 300 seats.</p>
+        <div class="equip-specs" id="eqSpecs">
+          <div class="equip-spec"><div class="k" data-i18n="eq.spec1">Brightness</div><div class="v">4,000 lm</div></div>
+          <div class="equip-spec"><div class="k" data-i18n="eq.spec2">Resolution</div><div class="v">1920 × 1080</div></div>
+          <div class="equip-spec"><div class="k" data-i18n="eq.spec3">Contrast</div><div class="v">16,000 : 1</div></div>
+        </div>
+        <div class="equip-cta">
+          <a class="btn btn-primary" href="https://wa.me/6289764400000" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            <span data-i18n="eq.cta1">Check Availability</span>
+          </a>
+          <a class="btn btn-ghost" href="#services">
+            <span data-i18n="eq.cta2">Full Catalog</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHY CHOOSE ═══════ -->
+<section class="why">
+  <div class="container">
+    <div class="services-head" style="margin-bottom: 0;">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="why.eyebrow">Why Choose FDA</span>
+        <h2 class="section-title" data-i18n="why.title">Eight reasons our clients keep coming back.</h2>
+      </div>
+      <p class="section-lede" data-reveal data-i18n="why.p">We are not just a rental shop. We are your multimedia production partner — invested in every event running flawlessly, from the projector's first light to the mic's last cue.</p>
+    </div>
+
+    <div class="why-grid" data-reveal-stagger>
+      <div class="why-card"><div class="why-num">01</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h4 data-i18n="why.1.t">Professional Equipment</h4><p data-i18n="why.1.d">Only trusted brands: Epson, Sony, Yamaha, Shure, Canon, Motorola.</p></div>
+      <div class="why-card"><div class="why-num">02</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><h4 data-i18n="why.2.t">Fast Response</h4><p data-i18n="why.2.d">WhatsApp reply within minutes. Emergency same-day delivery.</p></div>
+      <div class="why-card"><div class="why-num">03</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span><h4 data-i18n="why.3.t">Affordable Pricing</h4><p data-i18n="why.3.d">Fair, transparent quotes. No hidden fees, no upsells at delivery.</p></div>
+      <div class="why-card"><div class="why-num">04</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span><h4 data-i18n="why.4.t">Well Maintained</h4><p data-i18n="why.4.d">Every unit inspected, cleaned, and tested before it leaves our shop.</p></div>
+      <div class="why-card"><div class="why-num">05</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span><h4 data-i18n="why.5.t">Professional Technicians</h4><p data-i18n="why.5.d">Certified operators handle setup and on-site troubleshooting for you.</p></div>
+      <div class="why-card"><div class="why-num">06</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h4 data-i18n="why.6.t">Flexible Rental Duration</h4><p data-i18n="why.6.d">Half-day, full-day, multi-day, weekly — priced to your schedule.</p></div>
+      <div class="why-card"><div class="why-num">07</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><h4 data-i18n="why.7.t">Complete Solutions</h4><p data-i18n="why.7.d">Projector to sound to HT — one call handles the whole event stack.</p></div>
+      <div class="why-card"><div class="why-num">08</div><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><h4 data-i18n="why.8.t">5-Star Reviews</h4><p data-i18n="why.8.d">276 verified Google reviews averaging 5.0. Consistency our clients trust.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ REVIEWS ═══════ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="rev.eyebrow">Client Reviews</span>
+        <h2 class="section-title" data-i18n="rev.title">What our customers say on Google.</h2>
+      </div>
+      <div class="google-badge" data-reveal>
+        <svg class="g" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <div>
+          <div class="rating">5.0 <span style="font-weight:400; color:var(--slate-500); font-size:15px;"> / 5.0</span></div>
+          <div class="stars">★★★★★</div>
+          <div class="sub"><span class="counter" data-target="276">0</span>+ Google Reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-track" id="reviewsTrack">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Alat-alatnya bagus dan harga terjangkau. Pelayanannya juga cepat dan ramah. Recommended banget untuk sewa multimedia di Malang.</p>
+        <div class="footer"><div class="avatar">A</div><div><div class="who">Aditya P.</div><div class="when">3 weeks ago · Local Guide</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">HT berkualitas, jangkauannya jauh, baterai awet. Bapaknya sabar banget waktu setup di acara sekolah kami.</p>
+        <div class="footer"><div class="avatar">D</div><div><div class="who">Dewi K.</div><div class="when">1 month ago</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Kualitas projector sangat bagus, gambarnya terang meskipun siang hari. Sewa di FDA nggak ada nyesel. Fast response di WA.</p>
+        <div class="footer"><div class="avatar">R</div><div><div class="who">Rahmat S.</div><div class="when">2 months ago</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Sound system-nya jernih, bass-nya mantap. Cocok untuk acara pernikahan indoor. Teknisinya profesional dan ramah.</p>
+        <div class="footer"><div class="avatar">S</div><div><div class="who">Siti Nurhaliza</div><div class="when">2 months ago · Local Guide</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Sudah langganan sewa proyektor & layar buat seminar kampus. Selalu on-time, alatnya well-maintained, dan operator standby.</p>
+        <div class="footer"><div class="avatar">B</div><div><div class="who">Budi Hartono</div><div class="when">3 months ago</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Kami dari EO wedding sering sewa di sini. Harga bersaing, barang bagus, dan customer service-nya top. Terima kasih FDA.</p>
+        <div class="footer"><div class="avatar">L</div><div><div class="who">Linda Wijaya</div><div class="when">4 months ago</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GALLERY ═══════ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="services-head" style="margin-bottom:0;">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="gal.eyebrow">Event Gallery</span>
+        <h2 class="section-title" data-i18n="gal.title">A thousand events. One quality standard.</h2>
+      </div>
+      <p class="section-lede" data-reveal data-i18n="gal.p">Highlights from conferences, weddings, seminars, school ceremonies, and corporate events we've powered across Malang and East Java.</p>
+    </div>
+
+    <div class="gallery-filter" data-reveal>
+      <button class="active" data-filter="all" data-i18n="gal.f1">All</button>
+      <button data-filter="conference" data-i18n="gal.f2">Conference</button>
+      <button data-filter="wedding" data-i18n="gal.f3">Wedding</button>
+      <button data-filter="school" data-i18n="gal.f4">School</button>
+      <button data-filter="corporate" data-i18n="gal.f5">Corporate</button>
+      <button data-filter="church" data-i18n="gal.f6">Church</button>
+      <button data-filter="government" data-i18n="gal.f7">Government</button>
+    </div>
+
+    <div class="masonry" id="masonry"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<!-- ═══════ CLIENTS ═══════ -->
+<section class="clients">
+  <div class="container">
+    <div class="services-head" style="margin-bottom:0;">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="cl.eyebrow">Trusted By</span>
+        <h2 class="section-title" data-i18n="cl.title">Schools, corporations, government, communities.</h2>
+      </div>
+      <p class="section-lede" data-reveal data-i18n="cl.p">Over a decade of consistent service has earned us long-term partnerships with institutions across Malang Raya.</p>
+    </div>
+
+    <div class="clients-grid" data-reveal-stagger id="clientsGrid"><!-- filled by JS --></div>
+
+    <div class="clients-legend">
+      <span data-i18n="cl.l1">Universities</span>
+      <span data-i18n="cl.l2">Schools</span>
+      <span data-i18n="cl.l3">Corporations</span>
+      <span data-i18n="cl.l4">Government</span>
+      <span data-i18n="cl.l5">Wedding Organizers</span>
+      <span data-i18n="cl.l6">Churches</span>
+      <span data-i18n="cl.l7">Communities</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROCESS ═══════ -->
+<section class="process">
+  <div class="container">
+    <div class="services-head" style="margin-bottom:0;">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="pr.eyebrow">Work Process</span>
+        <h2 class="section-title" data-i18n="pr.title">Five simple steps to a successful event.</h2>
+      </div>
+      <p class="section-lede" data-reveal style="color:rgba(255,255,255,.7);" data-i18n="pr.p">Our workflow removes the friction from event production. You focus on your audience — we handle the technology.</p>
+    </div>
+
+    <div class="process-track" data-reveal-stagger>
+      <div class="process-line"></div>
+      <div class="process-step"><span class="process-num">01</span><h4 data-i18n="pr.1.t">Choose Equipment</h4><p data-i18n="pr.1.d">Browse the catalog or tell us the event type — we suggest the right kit.</p></div>
+      <div class="process-step"><span class="process-num">02</span><h4 data-i18n="pr.2.t">Contact WhatsApp</h4><p data-i18n="pr.2.d">Send your date, venue, and requirements. We reply within minutes.</p></div>
+      <div class="process-step"><span class="process-num">03</span><h4 data-i18n="pr.3.t">Receive Quotation</h4><p data-i18n="pr.3.d">Transparent quote — no hidden fees. Reserve with a friendly deposit.</p></div>
+      <div class="process-step"><span class="process-num">04</span><h4 data-i18n="pr.4.t">Delivery & Setup</h4><p data-i18n="pr.4.d">Our team delivers, installs, tests, and hands over on schedule.</p></div>
+      <div class="process-step"><span class="process-num">05</span><h4 data-i18n="pr.5.t">Successful Event</h4><p data-i18n="pr.5.d">On-call support throughout. Pickup after your event ends.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+        <h2 class="section-title" data-i18n="faq.title">Everything you need to know before you book.</h2>
+        <p class="section-lede" data-i18n="faq.p">Still have questions? Reach us on WhatsApp — our team responds within minutes, every day.</p>
+        <a class="btn btn-dark" href="https://wa.me/6289764400000" target="_blank" rel="noopener" style="margin-top:24px;">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          <span data-i18n="faq.cta">Chat with our team</span>
+        </a>
+      </div>
+      <div class="faq-list" data-reveal id="faqList">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta" id="contact">
+  <div class="container cta-inner">
+    <span class="eyebrow" style="color: var(--accent-hi); justify-content:center;" data-reveal data-i18n="cta.eyebrow">Ready When You Are</span>
+    <h2 data-reveal>
+      <span data-i18n="cta.h1">Need multimedia equipment</span><br>
+      <span class="grad" data-i18n="cta.h2">for your event?</span>
+    </h2>
+    <p data-reveal data-i18n="cta.p">Send us the date, venue, and your requirements. We'll build the perfect kit — and back it with our team, on-site, every step of the way.</p>
+    <div class="cta-actions" data-reveal>
+      <a class="btn btn-primary" href="https://wa.me/6289764400000" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        <span data-i18n="cta.b1">Book Now on WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost" href="tel:+6289764400000">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="cta.b2">Call 0897-6440-000</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div style="color:white;">
+          <svg width="180" height="42" viewBox="0 0 220 44">
+            <defs><linearGradient id="footlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#60A5FA"/></linearGradient></defs>
+            <circle cx="22" cy="22" r="17" fill="none" stroke="url(#footlg)" stroke-width="1.5"/>
+            <circle cx="22" cy="22" r="9" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
+            <circle cx="22" cy="22" r="3.2" fill="url(#footlg)"/>
+            <path d="M22 5 L22 12 M39 22 L32 22 M22 39 L22 32 M5 22 L12 22" stroke="url(#footlg)" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="54" y="24" font-family="SF Pro Display, Inter, sans-serif" font-size="19" font-weight="700" letter-spacing="1.5" fill="currentColor">FDA</text>
+            <text x="54" y="38" font-family="SF Pro Display, Inter, sans-serif" font-size="9" font-weight="500" letter-spacing="3.6" fill="currentColor" opacity="0.75">MULTIMEDIA</text>
+          </svg>
+        </div>
+        <p class="footer-brand-desc" data-i18n="ft.desc">Malang's most trusted multimedia rental partner. Projectors, sound systems, HT, DSLR, LED TV and complete event support — professionally maintained and delivered on time.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/fda_proyektor_malang/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+          <a href="https://wa.me/6289764400000" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          </a>
+          <a href="https://share.google/vUJjOszakadCDgrg7" target="_blank" rel="noopener" aria-label="Google Maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+          <a href="tel:+6289764400000" aria-label="Phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h5 data-i18n="ft.h1">Services</h5>
+        <ul>
+          <li><a href="#services" data-i18n="ft.s1">Projector Rental</a></li>
+          <li><a href="#services" data-i18n="ft.s2">Sound System</a></li>
+          <li><a href="#services" data-i18n="ft.s3">Walkie Talkie</a></li>
+          <li><a href="#services" data-i18n="ft.s4">DSLR Camera</a></li>
+          <li><a href="#services" data-i18n="ft.s5">LED TV</a></li>
+          <li><a href="#services" data-i18n="ft.s6">Full Event Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 data-i18n="ft.h2">Quick Links</h5>
+        <ul>
+          <li><a href="#about" data-i18n="ft.q1">About</a></li>
+          <li><a href="#equipment" data-i18n="ft.q2">Equipment</a></li>
+          <li><a href="#reviews" data-i18n="ft.q3">Reviews</a></li>
+          <li><a href="#gallery" data-i18n="ft.q4">Gallery</a></li>
+          <li><a href="#faq" data-i18n="ft.q5">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 data-i18n="ft.h3">Contact</h5>
+        <div class="footer-contact">
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://share.google/vUJjOszakadCDgrg7" target="_blank" rel="noopener">Perumahan Java Residence,<br>Jl. Candi Mendut Sel. VII No.A2,<br>Tulusrejo, Lowokwaru,<br>Kota Malang, Jawa Timur 65141</a>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059z"/></svg>
+            <a href="https://wa.me/6289764400000" target="_blank" rel="noopener">0897-6440-000</a>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span data-i18n="ft.hours">Mon – Sun · 08:00 – 22:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span id="year">2026</span> FDA Multimedia. <span data-i18n="ft.copyr">All rights reserved.</span></div>
+      <div class="legal">
+        <a href="#" data-i18n="ft.priv">Privacy</a>
+        <a href="#" data-i18n="ft.terms">Terms</a>
+        <a href="#" data-i18n="ft.sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════ Floating WhatsApp ═══════ -->
+<a class="wa-float" href="https://wa.me/6289764400000" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+  <span class="lb"><span data-i18n="wa.k">Chat on WhatsApp</span><small data-i18n="wa.v">Fast reply · 08:00–22:00</small></span>
+</a>
+
+<!-- Tweaks panel mount -->
+<div id="tweaksRoot"></div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="assets/app.js"></script>
+<script type="text/babel" src="tweaks_panel.jsx"></script>
+<script type="text/babel" src="assets/tweaks.jsx"></script>
+
+</body>
+</html>
